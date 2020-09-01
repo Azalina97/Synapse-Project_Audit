@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<!-- Head -->
+	<head>
+		<title>LOGIN/SIGN IN</title>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="keywords" content="Bootstrap Theme, Freebies, Dashboard, MIT license">
+		<meta name="description" content="Stream - Dashboard UI Kit">
+		<meta name="author" content="htmlstream.com">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+		<!-- Web Fonts -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+		<!-- Components Vendor Styles -->
+		<link rel="stylesheet" href="./assets/vendor/font-awesome/css/all.min.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="./assets/css/theme.css">
+	</head>
+	<!-- End Head -->
+
+	<body class="login">
+		<div id="login">
+			<h1 class="audit justify-content-center">audit</h1>
+			<div class="container">
+				<div id="login-row" class="row justify-content-center align-items-center">
+					<div id="login-column" class="col-md-5">
+						<div id="login-box" class="col-md-12">
+								<h3 class="text-info fa-2x font-weight-bold">Sign in</h3><br>
+
+								<div class="form-group mb-4">
+									<input id="username" class="form-control" name="username" type="text" placeholder="Username">
+								</div>
+
+								<div class="form-group">
+									<input id="password" class="form-control" name="password" type="password" placeholder="Password">
+									<span class="p-viewer">
+										<i class="fa fa-eye" aria-hidden="true"></i>
+									</span>
+								</div>
+								
+								<button class="btn btn-success btn-block" onclick="getData()">Sign In</button>
+								<p id="errorMsg1" style="display:none">Not exist</p>
+
+								<p class="small">
+									<br><a href="account-password-recover.html">Forgot Password?</a><br>
+									<a href="account-sign-up.html">Don’t have an account? Sign up here</a>
+								</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		console.log("try");
+	})
+
+	function login(postData)
+	{
+		var url="http://codeviable.com/engine-audit/public/api/login";
+
+		$.ajax({
+			url: url,
+			method: "POST",
+			data: postData,
+		}).done(function(response){
+			console.log(response);
+
+			if(response['status']=='success')
+			{
+				var apiKey = response['api_key'];
+				var userData = response['value'];
+				localStorage.setItem('auditToken',JSON.stringify(apiKey));
+				localStorage.setItem('auditUser',JSON.stringify(userData));
+				window.location.href="InviteAuditor.html";
+			}
+
+			else
+			{
+				$('#errorMsg1').css('display','block');
+				console.log('fail');
+			}
+		});
+	}
+
+	function getData ()
+	{
+		$('#errorMsg1').css('display','none');
+		var username = $('#username').val();
+		var password = $('#password').val();
+		console.log(username);
+		console.log(password);
+
+		var postData = {
+			'username':username,
+			'password':password,
+		};
+
+		login(postData);
+	}
+</script>

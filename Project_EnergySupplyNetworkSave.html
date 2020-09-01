@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<!-- Head -->
+	<head>
+		<title>PROJECT OVERVIEW</title>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="keywords" content="Bootstrap Theme, Freebies, Dashboard, MIT license">
+		<meta name="description" content="Stream - Dashboard UI Kit">
+		<meta name="author" content="htmlstream.com">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+		<!-- Web Fonts -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+		<!-- Components Vendor Styles -->
+		<link rel="stylesheet" href="./assets/vendor/font-awesome/css/all.min.css">
+		<link rel="stylesheet" href="./assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="assets/css/theme.css">
+		<!--<link rel="stylesheet" href="assets/css/profile.css">-->
+	</head>
+	<!-- End Head -->
+
+	<!-- Modal Update-->
+  	<div class="modal fade loader" id="ModalUpdate" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<i class="fa fa-spinner fa-spin"></i>
+		</div>
+	</div>
+	<!-- End Modal Update-->
+
+	<!-- Modal Save-->
+	<div class="modal fade loader" id="ModalSave" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			Saved
+		</div>
+	</div>
+	<!-- End Modal Save-->
+	
+	<!-- Modal View-->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Add Team Member</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+
+						<select class="form-control" type="status" name="status" id="status" placeholder="Add someone...">
+							<option></option>
+							<option>Active</option>
+							<option>Pending</option>
+							<option>Inactive</option>
+						  </select><br>
+						<h3 class="try1">Roles</h3>
+						<div class="custom-control custom-radio mb-2 ml-0">
+							<label><input type="radio" name="optradio" checked> Auditor</label><br>
+							<label><input type="radio" name="optradio"> Lead Auditor</label>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+				<a href="Project_Loading.html" type="button" class="btn btn-primary">
+					Add Member
+				</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Modal View-->
+
+	<body>
+		<!-- Header (Topbar) -->
+		<header class="u-header">
+			<div class="u-header-left">
+				<h1 class="h2">audit</h1>
+			</div>
+
+			<div class="u-header-middle">
+				<a class="js-sidebar-invoker u-sidebar-invoker" href="#!"
+				   data-is-close-all-except-this="true"
+				   data-target="#sidebar">
+					<i class="fa fa-bars u-sidebar-invoker__icon--open"></i>
+					<i class="fa fa-times u-sidebar-invoker__icon--close"></i>
+				</a>
+
+				<div>
+					<h1 class="h3">Energy Supply Network</h1>
+				</div>
+			</div>
+
+			<div class="dropdown mr-4 mt-3">
+				<a class="link-muted" href="#!" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+					<span>
+						<i class="fas fa-user-circle fa-2x"></i>
+					</span>
+					<span class="ml-2">
+						Bruce Wayne <i class="fa fa-angle-down ml-1" aria-hidden="true"></i>
+					</span>
+				</a>
+			</div>
+				
+			<div class="dropdown ml-2">
+				<div class="dropdown-menu dropdown-menu-right border-0 py-0 mt-3" aria-labelledby="dropdownMenuLink" style="width: 260px;">
+				  	<div class="card">
+							<div class="card-header py-3">
+								<!-- Storage -->
+								<div class="d-flex align-items-center mb-3">
+									<span class="h6 text-muted text-uppercase mb-0">Storage</span>
+
+									<div class="ml-auto text-muted">
+										<strong class="text-dark">60gb</strong> / 100gb
+									</div>
+								</div>
+
+								<div class="progress" style="height: 4px;">
+									<div class="progress-bar bg-primary" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+								<!-- End Storage -->
+							</div>
+
+							<div class="card-body">
+								<ul class="list-unstyled mb-0">
+									<li class="mb-4">
+										<a class="d-flex align-items-center link-dark" href="#!">
+											<span class="h3 mb-0"><i class="far fa-user-circle text-muted mr-3"></i></span> View Profile
+										</a>
+									</li>
+									<li class="mb-4">
+										<a class="d-flex align-items-center link-dark" href="#!">
+											<span class="h3 mb-0"><i class="far fa-list-alt text-muted mr-3"></i></span> Settings
+										</a>
+									</li>
+									<li class="mb-4">
+										<a class="d-flex align-items-center link-dark" href="#!">
+											<span class="h3 mb-0"><i class="far fa-laugh-wink text-muted mr-3"></i></span> Invite your friends
+										</a>
+									</li>
+									<li>
+										<a class="d-flex align-items-center link-dark" href="#!">
+											<span class="h3 mb-0"><i class="far fa-share-square text-muted mr-3"></i></span> Sign Out
+										</a>
+									</li>
+								</ul>
+							</div>
+				  	</div>
+				  </div>
+				</div>
+		  	<!-- End User Profile -->
+			</div>
+		</header>
+		<!-- End Header (Topbar) -->
+
+		<main class="u-main" role="main">
+			<!-- Sidebar -->
+			<aside id="sidebar" class="u-sidebar">
+				<div class="u-sidebar-inner">
+					<header class="u-sidebar-header">
+						<a class="u-sidebar-logo" href="index.html">
+							<img class="img-fluid" src="./assets/img/logo.png" width="124" alt="Stream Dashboard">
+						</a>
+					</header>
+
+					<nav class="u-sidebar-nav">
+						<ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
+							<header class="u-header">
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="Project_Table.html">
+										<i class="fa fa-arrow-left fa-lg"></i>
+										<span class="u-sidebar-nav-menu__item-title px-3">All projects</span>
+									</a>
+								</li>
+							</header>
+
+							<!-- Project Overview -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="Project_Overview.html">
+									<i class="fa fa-home u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Project Overview</span>
+								</a>
+							</li>
+							<!-- End Project Overview -->
+
+							<!-- Audit Session Setup -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="account-profile.html"
+								   data-target="#baseUI">
+									<i class="fa fa-adjust u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Audit Session Setup</span>
+									<i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+
+								<ul id="baseUI" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Project_ManageTeam.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Manage Team</span>
+										</a>
+									</li>
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Project_Information.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Project Information</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- End Audit Session Setup -->
+
+							<!-- Organisation Setup -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link active" href="Project_AuditedBuildingDetails.html"
+								   data-target="#subMenu1">
+									<i class="fa fa-building u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Organisation Setup</span>
+									<i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+
+								<ul id="subMenu1" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Project_AuditedBuildingDetails.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Audited Building Details</span>
+										</a>
+									</li>
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Project_EnergyManagementReview1.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Energy Management Review</span>
+										</a>
+									</li>
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Project_EnergySupplyUsageInfo3.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Energy Supply / Usage Info</span>
+										</a>
+									</li>
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link active" href="Project_EnergySupplyNetwork.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Energy Supply Network</span>
+										</a>
+									</li>
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="RoomRegistration.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Room Registration</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- End Organisation Setup -->
+
+							<!-- Equipment Setup -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="Equipment.html" data-target="#subMenu2">
+									<i class="fas fa-screwdriver u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Equipment Setup</span>
+									<i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+								<ul id="subMenu2" class="u-sidebar-nav-menu u-sidebar-nav-menu--second-level" style="display: none;">
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Equipment.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Equipment</span>
+										</a>
+									</li>
+									<li class="u-sidebar-nav-menu__item">
+										<a class="u-sidebar-nav-menu__link" href="Survey.html">
+											<i class="far fa-circle-notch u-sidebar-nav-menu__item-icon"></i>
+											<span class="u-sidebar-nav-menu__item-title">Survey</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- End Equipment Setup -->
+
+							<!-- Field Audit -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="./tables.html">
+									<i class="fa fa-circle-o-notch u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Field Audit</span>
+									<i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+							</li>
+							<!-- End Field Audit -->
+
+							<!-- Analysis -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="./tables.html">
+									<i class="fa fa-bar-chart u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Analysis</span>
+									<i class="fa fa-angle-right u-sidebar-nav-menu__item-arrow"></i>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+							</li>
+							<!-- End Analysis -->
+
+							<!-- ECMs -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="./tables.html">
+									<i class="fa fa-sticky-note u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">ECMs</span>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+							</li>
+							<!-- End ECMs -->
+
+							<!-- Report -->
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="./tables.html">
+									<i class="fas fa-clipboard u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Report</span>
+									<span class="u-sidebar-nav-menu__indicator"></span>
+								</a>
+							</li>
+							<!-- End Report -->
+							
+						</ul>
+					</nav>
+				</div>
+			</aside>
+			<!-- End Sidebar -->
+
+			<div class="u-content">
+				<div class="u-body">
+					<div class="mb-3 mr-8">
+						<i class="fa fa-spinner fa-spin"></i>
+					</div>
+					<div class="card1 mb-4">
+						<div class="card-body2">
+							<div class="table-responsive">
+								<table class="table">
+									  <tbody><br>
+											<tr>Photo</tr><br><br>
+											<!--
+											<div class="content-container start-panel">
+												<div class="file-input-container">
+													<label class="upload-area">
+														<div class="dashes">
+															<div class="upload-btn-container">
+																<i class="fa fa-plus" aria-hidden="true"></i>
+																<div class="upload-btn"> Add Photo</div>
+															</div>
+														</div>
+													</label>
+												</div>
+											</div>
+											-->
+											<div class="file-upload-wrapper">
+												<input type="file" id="input-file-now-custom-2" class="file-upload"
+											   data-height="500" />
+											 </div>
+
+											<br><tr>Description of Main Incoming</tr><br><br>
+											<textarea class="form-control" id="desc1" rows="5" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it."></textarea>
+											<br><tr>Description of Main Switch Boards</tr><br><br>
+											<textarea class="form-control" id="desc2" rows="5" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it."></textarea>
+											<br><tr>Description of Active Systems & Equipment</tr><br><br>
+											<textarea class="form-control" id="desc3" rows="5" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it."></textarea>
+									  <tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Global Vendor -->
+		<script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="./assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+		<script src="./assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+		<script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+		<!-- Plugins -->
+		<script src="./assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!-- Initialization  -->
+		<script src="./assets/js/sidebar-nav.js"></script>
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>

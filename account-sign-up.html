@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<!-- Head -->
+	<head>
+		<title>REGISTER/SIGN UP</title>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="keywords" content="Bootstrap Theme, Freebies, Dashboard, MIT license">
+		<meta name="description" content="Stream - Dashboard UI Kit">
+		<meta name="author" content="htmlstream.com">
+
+		 <!-- Bootstrap CSS -->
+		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+		 
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+		<!-- Web Fonts -->
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+		<!-- Components Vendor Styles -->
+		<link rel="stylesheet" href="./assets/vendor/font-awesome/css/all.min.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="./assets/css/theme.css">
+	</head>
+	<!-- End Head -->
+
+	<body class="register" id="form1">
+		<header class="u-header-audit">
+			<h1 class="audit2">audit</h1>
+			<div class="card2">
+				<h1 class="comp px-0 mb-5">Company Details</h1>
+
+				<div class="form-group mb-4">
+					<input id="name" class="form-control" name="name" type="text" placeholder="Name">
+				</div>
+
+				<div class="form-group mb-4">
+					<input id="email" class="form-control" name="email" type="text" placeholder="Email">
+				</div>
+
+				<div class="form-group mb-4">
+					<input id="username" class="form-control" name="username" type="text" placeholder="Username">
+				</div>
+
+				<div class="form-row">
+					<div class="col-md-5">
+						<div class="form-group mb-4">
+							<input id="password" class="form-control" name="password" type="password" placeholder="Password">
+						</div>
+					</div>
+
+					<div class="col-md-5">
+						<div class="form-group mb-4">
+							<input id="confirmPassword" class="form-control" name="confirmPassword" type="password" placeholder="Confirm">
+						</div>
+					</div>
+
+					<div class="fa fa-fw fa-eye field-icon toggle-password col-md-2 mt-2">
+						<span toggle="#password-field"></span>
+					</div>
+				</div>
+
+				<div class="form-group mb-5">
+					<label class="assistive" for="contact">Use 8 or more characters</label>
+					<input id="contact" class="form-control" name="contact" type="contact" placeholder="Contact number">
+				</div>
+
+				<div class="form-group mb-6">
+					<h1 class="h4 px-0 font-weight-bold">Company Address</h1>
+				</div>
+
+				<div class="form-group mb-4">
+					<input id="address" class="form-control" name="address" type="text" placeholder="Address">
+				</div>
+
+				<div class="form-group mb-4 col-md-6 px-0">
+					<input id="postalcode" class="form-control" name="postalcode" type="postalcode" placeholder="Postal code">
+				</div>
+				
+				<div class="form-group mb-4">
+					<select class="form-control browser-default custom-select" id="location">
+						<option value="-1" selected>Please select a location.</option>
+						<option value="0">Taman Universiti</option>
+						<option value="1">Two</option>
+						<option value="2">Three</option>
+					</select>
+				</div>
+
+				<div class="form-group mb-4">
+					<select class="form-control browser-default custom-select" id="area">
+						<option value="-1" selected>Select area</option>
+						<option value="0">Johor</option>
+						<option value="1">Two</option>
+						<option value="2">Three</option>
+					</select>
+				</div>
+
+				<div class="u-create-account text-muted py-3 mt-auto">
+					</i>By clicking Create account, I agree that I have read and accepted the <a href="#">Terms and Conditions.</a>
+				</div>
+				
+				<div class="form-row mt-3">
+					<div class="col-md-7">
+						<div class="form-group mb-6">
+							<div>
+								<a class="u-signIn-button fa-lg" href="account-sign-in.html">Sign in</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group mb-4">
+							<button class="btn btn-info btn-block ml-5" onclick="getData()">Create account</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</header>
+	</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		var token = localStorage.getItem('auditToken');
+		console.log(token);
+		console.log("try");
+		$token = localStorage.getItem('auditToken');
+	})
+
+	function register(postData)
+	{
+		var url="http://codeviable.com/engine-audit/public/api/user/add";
+		$.ajax({
+			url: url,
+			method: "POST",
+			data: postData,
+			headers: {
+                     "Authorization": "Bearer " + $token,
+                  	},
+					  
+		}).done(function(response){
+			console.log(response);
+
+			if(response['status']=='success')
+			{
+				postData = {'username':postData['username'],
+							'password':postData['password'],
+							}
+				login(postData);
+			}
+		});
+	}
+
+	function login(postData)
+	{
+		var url="http://codeviable.com/engine-audit/public/api/login";
+
+		$.ajax({
+			url: url,
+			method: "POST",
+			data: postData,
+		}).done(function(response){
+			console.log(response);
+
+			if(response['status']=='success')
+			{
+				var apiKey = response['api_key'];
+				var userData = response['value'];
+				localStorage.setItem('auditToken',JSON.stringify(apiKey));
+				localStorage.setItem('auditUser',JSON.stringify(userData));
+				window.location.href="InviteAuditor.html";
+			}
+
+			else
+			{
+				console.log('fail');
+			}
+		});
+	}
+
+	function getData ()
+	{
+        var name = $("#name").val();
+        var email = $("#email").val();
+		var username = $('#username').val();
+		var password = $("#password").val();
+        var confirmPassword = $("#confirmPassword").val();
+		var contact = $('#contact').val();
+        var address = $("#address").val();
+		var postalcode = $('#postalcode').val();
+        var location = $("#location").val();
+		var area = $('#area').val();
+
+		console.log(name);
+		console.log(email);
+		console.log(username);
+		console.log(password);
+		console.log(confirmPassword);
+		console.log(contact);
+		console.log(address);
+		console.log(postalcode);
+		console.log(location);
+		console.log(area);
+
+		var postData = {
+			'name':name,
+			'email':email,
+			'username':username,
+			'password':password,
+			'confirmPassword':confirmPassword,
+			'contact':contact,
+			'address':address,
+			'postalcode':postalcode,
+			'location':location,
+			'area':area,
+		};
+
+		register(postData);
+	}
+ </script>
